@@ -8,7 +8,7 @@ Table of Contents
 2. [Module Description - What the ovirt module does and why it is useful](#module-description)
 3. [Setup - The basics of getting started with ovirt](#setup)
 4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - The classes, defines,functions and facts available in this module](#reference)
+5. [Reference - The classes, defines, functions and facts available in this module](#reference)
 6. [Limitations - OS compatibility, etc.](#limitations)
 7. [Development - Guide for contributing to the module](#development)
 
@@ -59,6 +59,9 @@ Usage
 To create an oVirt Engine:
 
     class { 'ovirt::engine': }
+
+The oVirt Engine is now up and running. You can log in to the oVirt Engine's web administration portal with the username admin in the internal domain.
+
 
 ###Creating an oVirt Node
 
@@ -128,11 +131,16 @@ Limitations
 
 This module is known to work with oVirt 3.3.  Other versions of oVirt have not been tested.
 
+This module has been tested with the following operating systems:
+
+* RHEL/CentOS 6.x
+* Fedora 19
+
 
 Development
 ------------
 
 GitHub: <https://github.com/jasonc/puppet-ovirt>
 
-Puppet Forge: <http://forge.puppetlabs.com/jcannon/ovirt>.
+Puppet Forge: <http://forge.puppetlabs.com/jcannon/ovirt>
 
