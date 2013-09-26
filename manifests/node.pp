@@ -9,13 +9,13 @@
 class ovirt::node inherits ovirt {
 
   package { 'vdsm':
-    ensure => installed,
-    require => Package[$ovirt_release],
+    ensure  => installed,
+    require => Package[$ovirt::ovirt_release],
   }
 
   service { 'vdsmd':
-    enable => true,
-    ensure => 'running',
+    ensure  => 'running',
+    enable  => true,
     require => Package['vdsm'],
   }
 

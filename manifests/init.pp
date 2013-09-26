@@ -8,7 +8,7 @@
 #
 class ovirt {
 
-  $ovirt_os = $operatingsystem ? {
+  $ovirt_os = $::operatingsystem ? {
     centos  => 'el6',
     redhat  => 'el6',
     fedora  => 'fedora',
@@ -16,16 +16,15 @@ class ovirt {
   }
 
   if $ovirt_os == undef {
-    fail("The ${operatingsystem} operating system is not supported.")
+    fail("The ${::operatingsystem} operating system is not supported.")
   }
 
-  $ovirt_release_version="8-1"
-  $ovirt_release="ovirt-release-${ovirt_os}-${ovirt_release_version}"
+  $ovirt_release="ovirt-release-${ovirt_os}"
 
   package { $ovirt_release:
+    ensure   => installed,
     provider => 'rpm',
-    ensure => installed,
-    source => "http://ovirt.org/releases/$ovirt_release.noarch.rpm",
+    source   => "http://ovirt.org/releases/${ovirt_release}.noarch.rpm",
   }
 
 }
