@@ -9,8 +9,8 @@
 class ovirt {
 
   $ovirt_os = $::operatingsystem ? {
-    centos  => 'el6',
-    redhat  => 'el6',
+    centos  => 'el',
+    redhat  => 'el',
     fedora  => 'fedora',
     default => undef,
   }
