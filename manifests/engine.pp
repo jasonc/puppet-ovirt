@@ -63,17 +63,17 @@
 # Jason Cannon <jason@thisidig.com>
 #
 class ovirt::engine(
-  $application_mode = 'both', # both, virt, gluster
-  $storage_type = 'nfs', # nfs, fc, iscsi, posixfs
-  $organization = 'localdomain',
-  $nfs_config_enabled = true, # true, false
-  $iso_domain_name = 'ISO_DOMAIN',
-  $iso_domain_mount_point = '/var/lib/exports/iso',
-  $admin_password = 'admin',
-  $db_user = 'engine',
-  $db_password = 'dbpassword',
-  $db_host = 'localhost',
-  $db_port = '5432',
+  $application_mode         = 'both', # both, virt, gluster
+  $storage_type             = 'nfs', # nfs, fc, iscsi, posixfs
+  $organization             = 'localdomain',
+  $nfs_config_enabled       = true, # true, false
+  $iso_domain_name          = 'ISO_DOMAIN',
+  $iso_domain_mount_point   = '/var/lib/exports/iso',
+  $admin_password           = 'admin',
+  $db_user                  = 'engine',
+  $db_password              = 'dbpassword',
+  $db_host                  = 'localhost',
+  $db_port                  = '5432',
   $firewall_manager = $::operatingsystem ? {
     /(?i-mx:centos|redhat)/ => 'iptables',
     /(?i-mx:fedora)/        => 'firewalld',

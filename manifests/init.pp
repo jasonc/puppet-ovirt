@@ -2,29 +2,37 @@
 #
 # This class contains the common requirements of ovirt::engine and ovirt::node.
 #
+# === Parameters
+#
+# [*ovirt_release_base_url*]
+#   This setting can be used to override the default url of http://ovirt.org/releases.
+#
 # === Authors
 #
 # Jason Cannon <jason@thisidig.com>
 #
-class ovirt {
+class ovirt(
+  $ovirt_release_base_url = 'http://ovirt.org/releases'
+) {
 
-  $ovirt_os = $::operatingsystem ? {
-    centos  => 'el',
-    redhat  => 'el',
-    fedora  => 'fedora',
-    default => undef,
+  case $::operatingsystem {
+    centos, redhat: {
+      $ovirt_release     = 'ovirt-release-el6'
+      $ovirt_release_url = "${ovirt_release_base_url}/ovirt-release-el.noarch.rpm"
+    }
+    fedora: {
+      $ovirt_release     = 'ovirt-release-fedora'
+      $ovirt_release_url = "${ovirt_release_base_url}/${ovirt_release}.noarch.rpm"
+    }
+    default: {
+      fail("The ${::operatingsystem} operating system is not supported.")
+    }
   }
-
-  if $ovirt_os == undef {
-    fail("The ${::operatingsystem} operating system is not supported.")
-  }
-
-  $ovirt_release="ovirt-release-${ovirt_os}"
 
   package { $ovirt_release:
     ensure   => installed,
     provider => 'rpm',
-    source   => "http://ovirt.org/releases/${ovirt_release}.noarch.rpm",
+    source   => $ovirt_release_url,
   }
 
 }

@@ -79,9 +79,21 @@ The ovirt module comes with several options for configuring the oVirt engine.
 
 Classes:
 
+* [ovirt:](#class-ovirt)
 * [ovirt::engine](#class-ovirtengine)
 * [ovirt::node](#class-ovirtnode)
 
+###Class: ovirt:
+This class allows you to change the URL for the oVirt release package.
+
+For example, if you maintain a local repository you could do this:
+
+    class { 'ovirt::engine':
+      ovirt_release_base_url => 'http://ovirt.local.com/releases',
+    }
+
+####`ovirt_release_base_url`
+This setting can be used to override the default url of http://ovirt.org/releases.
 
 ###Class: ovirt::engine
 This class allows you to configure the main settings for an oVirt Engine.
