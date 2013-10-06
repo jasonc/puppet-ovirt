@@ -32,6 +32,9 @@
 #   This setting can be used to override the default ovirt admin password of
 #   admin.
 #
+# [*db_user*]
+#   This setting can be used to override the default database user of engine.
+#
 # [*dbPassword*]
 #   This setting can be used to override the default database password of
 #   dbpassword.
@@ -67,6 +70,7 @@ class ovirt::engine(
   $isoDomainName = 'ISO_DOMAIN',
   $isoDomainMountPoint = '/var/lib/exports/iso',
   $adminPassword = 'admin',
+  $db_user = 'engine',
   $dbPassword = 'dbpassword',
   $dbHost = 'localhost',
   $dbPort = '5432',

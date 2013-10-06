@@ -113,6 +113,9 @@ This setting can be used to override the default ISO Domain Mount Point of /var/
 ####`adminPassword`
 This setting can be used to override the default ovirt admin password of admin.
 
+####`db_user`
+This setting can be used to override the default database user of engine.
+
 ####`dbPassword`
 This setting can be used to override the default database password of dbpassword.
 
