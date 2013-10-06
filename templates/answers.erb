@@ -5,21 +5,21 @@ OVESETUP_DIALOG/confirmSettings=bool:True
 OVESETUP_DB/database=str:engine
 OVESETUP_DB/fixDbViolations=none:None
 OVESETUP_DB/secured=bool:False
-OVESETUP_DB/host=str:<%= @dbHost %>
+OVESETUP_DB/host=str:<%= @db_host %>
 OVESETUP_DB/user=str:<%= @db_user %>
 OVESETUP_DB/securedHostValidation=bool:False
-OVESETUP_DB/password=str:<%= @dbPassword %>
-OVESETUP_DB/port=int:<%= @dbPort %>
-OVESETUP_SYSTEM/nfsConfigEnabled=bool:<%= @nfsConfigEnabled ? "True" : "False" %>
+OVESETUP_DB/password=str:<%= @db_password %>
+OVESETUP_DB/port=int:<%= @db_port %>
+OVESETUP_SYSTEM/nfsConfigEnabled=bool:<%= @nfs_config_enabled ? "True" : "False" %>
 OVESETUP_PKI/organization=str:<%= @organization %>
-OVESETUP_CONFIG/isoDomainName=str:<%= @isoDomainName %>
-OVESETUP_CONFIG/isoDomainMountPoint=str:<%= @isoDomainMountPoint %>
-OVESETUP_CONFIG/adminPassword=str:<%= @adminPassword %>
-OVESETUP_CONFIG/applicationMode=str:<%= @applicationMode %>
-OVESETUP_CONFIG/firewallManager=str:<%= @firewallManager %>
+OVESETUP_CONFIG/isoDomainName=str:<%= @iso_domain_name %>
+OVESETUP_CONFIG/isoDomainMountPoint=str:<%= @iso_domain_mount_point %>
+OVESETUP_CONFIG/adminPassword=str:<%= @admin_password %>
+OVESETUP_CONFIG/applicationMode=str:<%= @application_mode %>
+OVESETUP_CONFIG/firewallManager=str:<%= @firewall_manager %>
 OVESETUP_CONFIG/websocketProxyConfig=none:None
 OVESETUP_CONFIG/fqdn=str:<%= @fqdn %>
-OVESETUP_CONFIG/storageType=str:<%= @storageType %>
+OVESETUP_CONFIG/storageType=str:<%= @storage_type %>
 OVESETUP_PROVISIONING/postgresProvisioningEnabled=bool:True
 OVESETUP_APACHE/configureRootRedirection=bool:True
 OVESETUP_APACHE/configureSsl=bool:True

@@ -4,11 +4,11 @@
 #
 # === Parameters
 #
-# [*applicationMode*]
+# [*application_mode*]
 #   This setting can be used to override the default ovirt application mode of
 #   both.  Valid options are both, virt, gluster.
 #
-# [*storageType*]
+# [*storage_type*]
 #   This setting can be used to override the default ovirt storage type of nfs.
 #   Valid options are nfs, fc, iscsi, and posixfs.
 #
@@ -16,36 +16,36 @@
 #   This setting can be used to override the default ovirt PKI organization of
 #   localdomain.
 #
-# [*nfsConfigEnabled*]
+# [*nfs_config_enabled*]
 #   This setting can be used to override the default ovirt nfs configuration of
 #   true.  Valid options are true and false.
 #
-# [*isoDomainName*]
+# [*iso_domain_name*]
 #   This setting can be used to override the default ISO Domain Name of
 #   ISO_DOMAIN.
 #
-# [*isoDomainMountPoint*]
+# [*iso_domain_mount_point*]
 #   This setting can be used to override the default ISO Domain Mount Point
 #   of /var/lib/exports/iso.
 #
-# [*adminPassword*]
+# [*admin_password*]
 #   This setting can be used to override the default ovirt admin password of
 #   admin.
 #
 # [*db_user*]
 #   This setting can be used to override the default database user of engine.
 #
-# [*dbPassword*]
+# [*db_password*]
 #   This setting can be used to override the default database password of
 #   dbpassword.
 #
-# [*dbHost*]
+# [*db_host*]
 #   This setting can be used to override the default database host of localhost.
 #
-# [*dbPort*]
+# [*db_port*]
 #   This setting can be used to override the default database port of 5432.
 #
-# [*firewallManager*]
+# [*firewall_manager*]
 #   This setting can be used to override the default firewall manager.  The
 #   module uses iptables for RHEL and CentOS and firewalld for Fedora by
 #   default.  Valid options are iptables and firewalld.
@@ -53,8 +53,8 @@
 # === Examples
 #
 #  class { ovirt::engine:
-#    applicationMode => 'ovirt',
-#    storageType     => 'fc',
+#    application_mode => 'ovirt',
+#    storage_type    => 'fc',
 #    organization    => 'example.com',
 #  }
 #
@@ -63,18 +63,18 @@
 # Jason Cannon <jason@thisidig.com>
 #
 class ovirt::engine(
-  $applicationMode = 'both', # both, virt, gluster
-  $storageType = 'nfs', # nfs, fc, iscsi, posixfs
+  $application_mode = 'both', # both, virt, gluster
+  $storage_type = 'nfs', # nfs, fc, iscsi, posixfs
   $organization = 'localdomain',
-  $nfsConfigEnabled = true, # true, false
-  $isoDomainName = 'ISO_DOMAIN',
-  $isoDomainMountPoint = '/var/lib/exports/iso',
-  $adminPassword = 'admin',
+  $nfs_config_enabled = true, # true, false
+  $iso_domain_name = 'ISO_DOMAIN',
+  $iso_domain_mount_point = '/var/lib/exports/iso',
+  $admin_password = 'admin',
   $db_user = 'engine',
-  $dbPassword = 'dbpassword',
-  $dbHost = 'localhost',
-  $dbPort = '5432',
-  $firewallManager = $::operatingsystem ? {
+  $db_password = 'dbpassword',
+  $db_host = 'localhost',
+  $db_port = '5432',
+  $firewall_manager = $::operatingsystem ? {
     /(?i-mx:centos|redhat)/ => 'iptables',
     /(?i-mx:fedora)/        => 'firewalld',
   }

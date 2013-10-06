@@ -41,7 +41,7 @@ The only configuration you may need to perform will be around the `ovirt::engine
 Parameters can be passed in for a more customized configuration:
 
     class { 'ovirt::engine':
-      storageType => 'fc',
+      storage_type => 'fc',
     }
 
 Once you have completed the configuration of `ovirt::engine`, you can test the settings by visiting the web management interface in a web browser and logging in as admin@internal with the default password of admin.
@@ -89,43 +89,43 @@ This class allows you to configure the main settings for an oVirt Engine.
 For example, if you want to use iSCSI for the default storage type in the default data center, you could do this:
 
     class { 'ovirt::engine':
-      storageType => 'iscsi',
+      storage_type => 'iscsi',
     }
 
-####`applicationMode`
+####`application_mode`
 This setting can be used to override the default ovirt application mode of both.  Valid options are both, virt, gluster.
 
-####`storageType`
+####`storage_type`
 This setting can be used to override the default ovirt storage type of nfs.  Valid options are nfs, fc, iscsi, and posixfs.
 
 ####`organization`
 This setting can be used to override the default ovirt PKI organization of localdomain.
 
-####`nfsConfigEnabled`
+####`nfs_config_enabled`
 This setting can be used to override the default ovirt nfs configuration of true.  Valid options are true and false.
 
-####`isoDomainName`
+####`iso_domain_name`
 This setting can be used to override the default ISO Domain Name of ISO_DOMAIN.
 
-####`isoDomainMountPoint`
+####`iso_domain_mount_point`
 This setting can be used to override the default ISO Domain Mount Point of /var/lib/exports/iso.
 
-####`adminPassword`
+####`admin_password`
 This setting can be used to override the default ovirt admin password of admin.
 
 ####`db_user`
 This setting can be used to override the default database user of engine.
 
-####`dbPassword`
+####`db_password`
 This setting can be used to override the default database password of dbpassword.
 
-####`dbHost`
+####`db_host`
 This setting can be used to override the default database host of localhost.
 
-####`dbPort`
+####`db_port`
 This setting can be used to override the default database port of 5432.
 
-####`firewallManager`
+####`firewall_manager`
 This setting can be used to override the default firewall manager.  The module uses iptables for RHEL and CentOS and firewalld for Fedora by default.  Valid options are iptables and firewalld.
 
 
