@@ -8,9 +8,16 @@
 #
 class ovirt::node inherits ovirt {
 
+  if $ovirt::download_rpm {
+    $require_package = Package[$ovirt::ovirt_release]
+  }
+  else {
+    $require_package = undef
+  }
+
   package { 'vdsm':
     ensure  => installed,
-    require => Package[$ovirt::ovirt_release],
+    require => $require_package,
   }
 
   service { 'vdsmd':
