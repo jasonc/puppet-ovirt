@@ -12,7 +12,8 @@
 # Jason Cannon <jason@thisidig.com>
 #
 class ovirt(
-  $ovirt_release_base_url = 'http://ovirt.org/releases'
+  $ovirt_release_base_url = 'http://ovirt.org/releases',
+  $download_rpm           = false,
 ) {
 
   case $::operatingsystem {
@@ -29,10 +30,12 @@ class ovirt(
     }
   }
 
-  package { $ovirt_release:
-    ensure   => installed,
-    provider => 'rpm',
-    source   => $ovirt_release_url,
+  if $download_rpm {
+    package { $ovirt_release:
+      ensure   => installed,
+      provider => 'rpm',
+      source   => $ovirt_release_url,
+    }
   }
 
 }

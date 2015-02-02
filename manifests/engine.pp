@@ -80,9 +80,16 @@ class ovirt::engine(
   }
 ) inherits ovirt {
 
+  if $ovirt::download_rpm {
+    $require_package = Package[$ovirt::ovirt_release]
+  }
+  else {
+    $require_package = undef
+  }
+
   package { 'ovirt-engine':
     ensure  => installed,
-    require => Package[$ovirt::ovirt_release],
+    require => $require_package,
     notify  => Exec[engine-setup],
   }
 
