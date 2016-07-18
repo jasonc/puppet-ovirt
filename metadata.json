@@ -1,0 +1,23 @@
+{
+   "name": "jasonc-ovirt",
+   "version": "0.0.5",
+   "author": "Jason Cannon",
+   "license": "Apache-2.0",
+   "summary": "A module to manage oVirt/RHEV",
+   "source": "https://github.com/jasonc/puppet-ovirt",
+   "project_page": "https://github.com/jasonc/puppet-ovirt",
+   "issues_url": "https://github.com/jasonc/puppet-ovirt/issues",
+   "tags": ["rhev", "ovirt"],
+   "operatingsystem_support": [
+     {
+     "operatingsystem":"RedHat",
+     "operatingsystemrelease":[ "6" ]
+     }
+    ],
+   "dependencies": [
+     {
+       "name": "puppetlabs/stdlib",
+       "version_requirement": ">=3.2.0"
+     }
+   ]
+}
