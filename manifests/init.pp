@@ -12,13 +12,13 @@
 # Jason Cannon <jason@thisidig.com>
 #
 class ovirt(
-  $ovirt_release_base_url = 'http://ovirt.org/releases'
+  $ovirt_release_base_url = 'http://resources.ovirt.org/pub/yum-repo/'
 ) {
 
   case $::operatingsystem {
     centos, redhat: {
-      $ovirt_release     = 'ovirt-release-el6'
-      $ovirt_release_url = "${ovirt_release_base_url}/ovirt-release-el.noarch.rpm"
+      $ovirt_release     = 'ovirt-release41'
+      $ovirt_release_url = "${ovirt_release_base_url}/ovirt-release41.rpm"
     }
     fedora: {
       $ovirt_release     = 'ovirt-release-fedora'
