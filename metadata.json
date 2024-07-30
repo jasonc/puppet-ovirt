@@ -3,7 +3,7 @@
    "version": "0.0.5",
    "author": "Jason Cannon",
    "license": "Apache-2.0",
-   "summary": "A module to manage oVirt/RHEV",
+   "summary": "A module to install oVirt",
    "source": "https://github.com/jasonc/puppet-ovirt",
    "project_page": "https://github.com/jasonc/puppet-ovirt",
    "issues_url": "https://github.com/jasonc/puppet-ovirt/issues",
